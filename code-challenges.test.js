@@ -12,8 +12,54 @@
 
 
 // QUESTION 1) Create a function that takes in a number (greater than 2) and returns an array that length containing the numbers of the Fibonacci sequence.
+describe("fibSequence", () => {
+    it("takes in a number greater than 2, and returns an array of that length containing the numbers of the fibbonaci sequence", () => {
+        expect(fibSequence(fibLength1)).toEqual([1, 1, 2, 3, 5, 8])
+        expect(fibSequence(fibLength2)).toEqual([1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+    })
+})
+
+// b) Create the function that makes the test pass.
+
+// create function that takes a number greater than 2
+// create result array with 0 and 1 - starting numbers for fibonacci sequence
+// iterate until i <= num, i starting on 2 due to 2 items already being in array
+    // on each iteration, push into result array the last number added with the number before the last
+// use slice method to remove 0 from result array, giving the array the correct length and number sequence
 
 
+const fibSequence = (num) => {
+    let result = [0, 1]
+
+    if (num > 2) {
+    for (let i = 2; i <= num; i++) {
+        result.push(result[i - 1] + result[i - 2])
+    }
+}
+    let finalResult = result.slice(1)
+    return finalResult
+}
+
+// b) Create the function that makes the test pass.
+
+// create function that takes a number greater than 2
+// create result array with 0 and 1 - starting numbers for fibonacci sequence
+// iterate until i <= num, i starting on 2 due to 2 items already being in array
+    // on each iteration, push into result array the last number added with the number before the last
+// use slice method to remove 0 from result array, giving the array the correct length and number sequence
+
+
+const fibSequence = (num) => {
+    let result = [0, 1]
+
+    if (num > 2) {
+    for (let i = 2; i <= num; i++) {
+        result.push(result[i - 1] + result[i - 2])
+    }
+}
+    let finalResult = result.slice(1)
+    return finalResult
+}
 //PSUEDO CODING
 // create a functionn that takes in a number > 2 (greater than 2)
 // Output: Returns an array the same length while addinig(.push) to push the new number into the empty array. Then add (+) the previous number to each to get the fibinochi sequence
@@ -49,7 +95,7 @@ describe("fibinochi", () => {
     });
   })
 
- 
+
 
 
 // b) Create the function that makes the test pass.
@@ -66,8 +112,8 @@ let fibinochi= () => {}
     }
 
 
-  
-       
+
+
 // QUESTION 2) Create a function that takes in an array and returns a new array of only odd numbers sorted from least to greatest.
 
 //PSUEDO CODING
@@ -102,21 +148,19 @@ describe("theOdds", () => {
     });
   })
 
-
-
 // 2b) Create the function that makes the test pass.
 
 // TRY One  🤷🏾‍♀️
-const onlyNumbers = fullArr1.filter( 
+const onlyNumbers = fullArr1.filter(
     element => typeof element === "number"
-); 
+);
 
 const odds = onlyNumbers.filter(number => {
     return number % 2 !== 0;
 });
 
 const sorted= odds.sort
- 
+
 
 
 // Question 3) Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
@@ -175,12 +219,3 @@ const sumOfArray1= arr => {
    });
    return accSum.res;
 };
-
-
-
-
-
-
-
-
-
